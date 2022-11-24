@@ -1,0 +1,160 @@
+// 内容区样式
+/* 
+    外盒子固定定位，左右上使用绝对定位，内容区更改padding
+*/
+.editor {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    // background-color: yellow;
+
+    &-left,&-right {
+        position: absolute;
+        overflow: scroll;
+        overflow-x: hidden;
+        width: 270px;
+        height: 100%;
+        top: 0;
+        // background-color: aqua;
+    }
+
+    &-left {
+        left: 0;
+    }
+
+    &-right {
+        right: 0;
+    }
+
+    &-top {
+        position: absolute;
+        left: 280px;
+        right: 280px;
+        height: 80px;
+        top: 20px;
+
+        display: flex;
+        // background-color: pink;
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0,0,0,.3);
+            height: 50px;
+            width: 50px;
+            // padding: 10px;
+            color: #fff;
+            margin-left: 5px;
+        }
+        &-item span {
+            font-size: 14px;
+        }
+    }
+
+    &-container {
+        padding: 90px 280px 0;
+        box-sizing: border-box;
+        height: 100%;
+
+        &-box {
+            overflow: scroll;
+            height: 100%;
+        }
+
+        &-content {
+            background-color: #61bfab;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+    }
+
+    &-box {
+        position: absolute;
+    }
+
+    /* 焦点样式 */
+    &-box-focus {
+        border: 1px red dashed;
+    }
+
+    &-box-focus::after {
+        position: absolute;
+        content: '';
+        cursor: move;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        opacity: 0.2;
+    }
+}
+
+.list-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-item {
+        width: 240px;
+        min-height: 100px;
+        margin-top: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 5px;
+        box-sizing: border-box;
+        background-color: #999;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(96,205,224);
+        padding: 2px;
+        border-radius: 1px;
+        user-select: none;
+        font-size: 14px;
+    }
+
+    &-item::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        opacity: 0.2;
+    }
+
+}
+
+.line { 
+    &-x {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border-left: 1px red dashed;
+    }
+    &-y {
+        position: absolute;
+        top: 0;
+        right: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border-top: 1px red dashed;
+    }
+}

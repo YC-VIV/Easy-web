@@ -8,6 +8,10 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "deepcopy": "^2.1.0",
+    "element-plus": "^2.2.20",
+    "font-awesome": "^4.7.0",
+    "mitt": "^3.0.0",
     "vue": "^3.0.0"
   },
   "devDependencies": {
